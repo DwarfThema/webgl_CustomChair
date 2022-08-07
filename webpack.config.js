@@ -16,6 +16,7 @@ module.exports = {
     path: path.resolve("./dist"),
     filename: "[name].min.js",
   },
+
   devServer: {
     liveReload: true,
   },
@@ -62,10 +63,12 @@ module.exports = {
           : false,
     }),
     new CleanWebpackPlugin(),
+
     new CopyWebpackPlugin({
       patterns: [
-        { from: "./src/resources", to: "./resources" },
         { from: "./src/main.css", to: "./main.css" },
+
+        { from: "./src/resources", to: "./resources" },
       ],
     }),
   ],
